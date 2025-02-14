@@ -1,0 +1,19 @@
+[
+    {
+        "id":1,
+        "username":"pradeep1@gmail.com",
+        "password":"pp001122"
+    },
+
+    {
+        "id":2,
+        "username":"pradeep2@gmail.com",
+        "password":"pp001122"
+    },
+
+    {
+        "id":3,
+        "username":"pradeep3@gmail.com",
+        "password":"pp001122"
+    }
+]
