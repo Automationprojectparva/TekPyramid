@@ -24,7 +24,7 @@ test('Amazon login',async({page})=>{
 
 })
 
-test.only('atoz',async({page})=>{
+test('atoz',async({page})=>{
 
     await page.goto("https://www.amazon.in/")
     await expect(page).toHaveURL("https://www.amazon.in/")

@@ -47,7 +47,7 @@ test('handle Alert',async({page})=>{
     })
 })
 
-test.only('handle autosuggestions',async({page})=>{
+test('handle autosuggestions',async({page})=>{
 
     await page.goto("https://demoapps.qspiders.com/ui/autocomplete?sublist=0&scenario=1")
 
