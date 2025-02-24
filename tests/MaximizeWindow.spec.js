@@ -5,6 +5,8 @@ import { test,expect } from "@playwright/test";
 
 //option 2 - set up in configuration file
 
+//option 3 - await page.setViewportSize({width:1080,height:650})
+
 test('maximize window',async({page})=>{
 
     await page.goto("http://www.flipkart.com/")

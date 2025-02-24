@@ -14,3 +14,30 @@ test('log in',async()=>{
 
     await page2.goto("https://www.makemytrip.com/")
 })
+
+test.only('handle calender',async({page})=>{
+
+    await page.goto("https://www.makemytrip.com/")
+    await page.locator("//span[@class='commonModal__close']").click()
+
+    await page.locator("//div[@class='flt_fsw_inputBox dates inactiveWidget ']").click()
+
+    await page.waitForSelector("//p[@class=' todayPrice']")
+    let prices=await page.$$("//p[@class=' todayPrice']")
+
+    await page.waitForTimeout(3000)
+
+    let array=[]
+
+    for(let price of prices){
+       let rate=await price.textContent()
+        
+        array.push(parseInt(rate.replaceAll(",","")))
+
+    }
+    
+    array.sort((a,b)=> a-b )
+    console.log(array)
+    console.log("Minimum price of the month :"+array[0])
+    
+})
