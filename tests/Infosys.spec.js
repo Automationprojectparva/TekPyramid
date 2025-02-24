@@ -54,6 +54,11 @@ test.only('handling multi browser',async({browser})=>{
 
     await newPage.locator("#email").fill("pradeep@gmail.com")
     await newPage.waitForTimeout(3000)
+    await newPage.close()
+
+    await page.locator("//a[text()='Multiple Windows']").click()
+
+    await page.waitForTimeout(3000)
 
 })
 
