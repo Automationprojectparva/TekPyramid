@@ -24,7 +24,7 @@ test('fetch multiple checkbox and click',async({page})=>{
     }
 })
 
-test.only('dynamic element action',async({page})=>{
+test('dynamic element action',async({page})=>{
 
     await page.goto("https://www.amazon.in/")
     let search=await page.locator("#twotabsearchtextbox")
@@ -33,6 +33,28 @@ test.only('dynamic element action',async({page})=>{
     
     await page.locator("//div[@id='p_n_feature_two_browse-bin/93770377031']//li[@id='p_n_feature_two_browse-bin/93770416031']//i[@class='a-icon a-icon-checkbox']").check()
     await page.pause()
+})
+
+test.only('handling multi browser',async({browser})=>{
+
+    const context =await browser.newContext()
+    const page=await context.newPage()
+
+    await page.goto("https://demoapps.qspiders.com/ui/browser?sublist=0")
+
+    const [newPage] = await Promise.all
+    (
+        [
+            context.waitForEvent("page"),
+            page.locator("#browserLink1").click()
+        ]
+    )
+
+    await newPage.waitForTimeout(3000)
+
+    await newPage.locator("#email").fill("pradeep@gmail.com")
+    await newPage.waitForTimeout(3000)
+
 })
 
 
