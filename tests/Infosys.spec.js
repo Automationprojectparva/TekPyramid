@@ -24,7 +24,16 @@ test('fetch multiple checkbox and click',async({page})=>{
     }
 })
 
+test.only('dynamic element action',async({page})=>{
 
+    await page.goto("https://www.amazon.in/")
+    let search=await page.locator("#twotabsearchtextbox")
+    await search.fill("sunglasses")
+    await search.press("Enter")
+    
+    await page.locator("//div[@id='p_n_feature_two_browse-bin/93770377031']//li[@id='p_n_feature_two_browse-bin/93770416031']//i[@class='a-icon a-icon-checkbox']").check()
+    await page.pause()
+})
 
 
 
