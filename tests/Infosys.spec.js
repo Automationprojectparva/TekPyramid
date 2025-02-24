@@ -35,7 +35,7 @@ test('dynamic element action',async({page})=>{
     await page.pause()
 })
 
-test.only('handling multi browser',async({browser})=>{
+test('handling multi browser',async({browser})=>{
 
     const context =await browser.newContext()
     const page=await context.newPage()
@@ -57,6 +57,22 @@ test.only('handling multi browser',async({browser})=>{
     await newPage.close()
 
     await page.locator("//a[text()='Multiple Windows']").click()
+
+    await page.waitForTimeout(3000)
+
+})
+
+test.only('handle iframe',async({page})=>{
+
+    await page.goto("https://demoapps.qspiders.com/ui/frames/multiple?sublist=2")
+    const iframes=await page.frames()
+
+    for(let iframe of iframes){
+        console.log(`iframes URL : ${iframe.url()}`)
+    }
+
+    const iframe1=await page.frameLocator("(//iframe[@class='w-full h-96'])[1]")
+    await iframe1.locator("#email").fill("pradeep@gmail.com")
 
     await page.waitForTimeout(3000)
 

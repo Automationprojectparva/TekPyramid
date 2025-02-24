@@ -47,6 +47,8 @@ test('handle Alert',async({page})=>{
     })
 })
 
+// page.on('dialog',async(t)=> t.accept())
+
 test('handle autosuggestions',async({page})=>{
 
     await page.goto("https://demoapps.qspiders.com/ui/autocomplete?sublist=0&scenario=1")
