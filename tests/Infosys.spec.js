@@ -62,7 +62,7 @@ test('handling multi browser',async({browser})=>{
 
 })
 
-test.only('handle iframe',async({page})=>{
+test('handle iframe',async({page})=>{
 
     await page.goto("https://demoapps.qspiders.com/ui/frames/multiple?sublist=2")
     const iframes=await page.frames()
