@@ -39,3 +39,18 @@ test('atoz',async({page})=>{
     expect(headphones).toBeVisible()
 
 })
+
+test.only('demo',async({page})=>{
+
+    await page.goto("https://www.amazon.in/")
+    await expect(page).toHaveURL("https://www.amazon.in/")
+
+    await page.waitForSelector("text=' Electronics '")
+    await page.locator("text= 'Electronics '").click()
+
+    const laptop=await page.locator("text='Laptops'")
+    const headphones=await page.locator("text='Headphones'")
+
+    await expect((laptop).toBeVisible()).toBeTruthy()
+    await expect(headphones).toBeVisible()
+})
