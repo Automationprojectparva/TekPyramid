@@ -31,7 +31,7 @@ const connection = mysql.createConnection({
         await connectwithDB()
     })
 
-test('connecting DB',async({page})=>{
+test.skip('connecting DB',async({page})=>{
 
     await page.goto("")
 

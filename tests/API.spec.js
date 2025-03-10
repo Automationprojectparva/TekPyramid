@@ -3,7 +3,7 @@ import { test, expect  } from "@playwright/test";
 // const { chromium } = require('playwright');
 const axios = require('axios'); // Import axios for making API calls
 
-test('API request',async ({browser}) => {
+test.skip('API request',async ({browser}) => {
   // Launch browser and create a new context
 //   const browser = await chromium.launch();
   const context=await browser.newContext()

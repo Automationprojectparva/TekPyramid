@@ -20,7 +20,7 @@ test('handling drop down',async({page})=>{
        country.push(good)
         // console.log(good);
     }
-    
+
    console.log(country)
 
     await expect(country.includes("Germany")).toBeTruthy()

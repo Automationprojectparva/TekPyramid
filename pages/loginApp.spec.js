@@ -8,6 +8,7 @@ class login{
         this.password="#Password"
         this.chkbox="#RememberMe"
         this.loginbutton="//input[@value='Log in']"
+        // this.addcart=page.locator("")
     }
 
     async loginToApp(){
@@ -15,6 +16,7 @@ class login{
         await this.page.fill(this.password,testdata.password)
         await this.page.check(this.chkbox)
         await this.page.click(this.loginbutton)
+        // await this.addcart.click()
     }
 }
 module.exports=login;

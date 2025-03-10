@@ -21,7 +21,7 @@ test('Amazon login',async({page})=>{
     //verifying the expected products are available in the page 
     await expect(laptop).toBeVisible()
     await expect(headphones).toBeVisible()
-
+    
 })
 
 test('atoz',async({page})=>{
@@ -40,7 +40,7 @@ test('atoz',async({page})=>{
 
 })
 
-test.only('demo',async({page})=>{
+test('demo',async({page})=>{
 
     await page.goto("https://www.amazon.in/")
     await expect(page).toHaveURL("https://www.amazon.in/")

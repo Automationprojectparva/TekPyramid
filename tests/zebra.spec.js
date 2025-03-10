@@ -1,6 +1,6 @@
 import { test,expect } from "@playwright/test";
 
-test('practice of playwright',async({page})=>{
+test('file upload',async({page})=>{
 
    await page.goto("https://demoapps.qspiders.com/ui/fileUpload?sublist=0")
 //    await page.click("//div[text()='Drag and drop files or click to select']")
